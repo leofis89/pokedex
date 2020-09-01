@@ -1,0 +1,35 @@
+.row1 {
+	color: orangered;
+}
+
+.img {
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+}
+
+.main {
+	font-family: 'Oswald',
+		sans-serif;
+	background-color: #eee;
+}
+
+.card {
+	opacity: 1;
+	border: 1px orangered solid;
+	color: orangered;
+	box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+	transition: .5s ease;
+	backface-visibility: hidden;
+}
+
+a:hover {
+	text-decoration: none;
+	color: rgb(175, 70, 32);
+
+}
+
+.card:hover {
+	opacity: 0.6;
+	cursor: pointer
+}
