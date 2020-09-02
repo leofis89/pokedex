@@ -82,7 +82,8 @@ a:hover {
 }
 
 .imagem {
-	margin-left: 13%;
+	background-color: rgba(187, 181, 181, 0.192);
+	border-radius: 50%;
 }
 
 #mainId {}
@@ -90,4 +91,12 @@ a:hover {
 .valores {
 	color: green;
 	font-weight: 600;
+}
+
+.col_btn {
+	margin-right: 10%;
+}
+
+.col_btn a:hover {
+	color: white;
 }

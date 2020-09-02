@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { Row, Col, Card } from 'react-bootstrap';
+import { Row, Col, Card, Button } from 'react-bootstrap';
 import axios from 'axios';
+import Link from 'next/link';
 
 export async function getStaticProps({ params }) {
 	const data = await fetch(
@@ -97,6 +98,7 @@ export default function Id({ data }) {
 											data.types[0].type.name.substring(1)
 										)}
 								</h4>
+
 								<br />
 								{/* <h6> Ataques</h6>
 								<p>
@@ -121,6 +123,14 @@ export default function Id({ data }) {
 							</Col>
 							<Col className="imagem">
 								<img src={url} id="img" />
+							</Col>
+							<Col xs={3} className="col_btn">
+								{' '}
+								<Button variant="success">
+									<Link href="/">
+										<a>Voltar</a>
+									</Link>
+								</Button>
 							</Col>
 						</Row>
 
