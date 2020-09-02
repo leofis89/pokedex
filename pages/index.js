@@ -3,6 +3,7 @@ import Head from 'next/head';
 import axios from 'axios';
 import { Row, Col, Card } from 'react-bootstrap';
 import Link from 'next/link';
+import Header from '../layouts/home';
 
 export async function getStaticProps({ params }) {
 	const res = await fetch('https://pokeapi.co/api/v2/pokemon/');
@@ -26,7 +27,7 @@ export async function getStaticProps({ params }) {
 
 export default function Home(props) {
 	const { pokemon } = props;
-	console.log(pokemon);
+	// console.log(pokemon);
 	// useEffect(() => {
 	// 	async function fetchData() {
 	// 		const { data } = await axios.get(
@@ -40,14 +41,6 @@ export default function Home(props) {
 
 	return (
 		<div>
-			<Head>
-				<title>Create Next App</title>
-				<link rel="icon" href="/favicon.ico" />
-				<link
-					href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap"
-					rel="stylesheet"
-				></link>
-			</Head>
 			<main className="container-fluid main">
 				<Row className="mx-3 pt-3 row1">
 					<Col className="text-center">
@@ -57,6 +50,7 @@ export default function Home(props) {
 
 				<Row className="mx-3 my-3">
 					{pokemon.map((poke, index) => (
+						// console.log(index),
 						<Col
 							xs={12}
 							sm={4}
@@ -64,9 +58,13 @@ export default function Home(props) {
 							lg={4}
 							className="text-center border"
 						>
-							<Card className="py-3 my-3 card">
+							<Card className="py-3 my-3 cardHome">
 								<img src={poke.image} className="img" />
-								<Link href={poke.url}>
+
+								<Link
+									href={`/pokemon/[id]`}
+									as={`/pokemon/${index + 1}`}
+								>
 									<a>
 										{poke.name
 											.substring(0, 1)
